@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: remix-start:latest
+    container_name: remix-start-full
+    expose:
+      - 5173
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+      - PORT=5173
