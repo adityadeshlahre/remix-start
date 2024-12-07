@@ -10,7 +10,6 @@ RUN npm install --global pnpm@latest
 FROM base AS deps
 WORKDIR /app
 COPY package.json ./
-RUN pnpm add -g lefthook
 RUN pnpm install
 
 FROM deps AS builder
