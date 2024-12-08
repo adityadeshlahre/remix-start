@@ -5,7 +5,8 @@
 		"**/.server/**/*.ts",
 		"**/.server/**/*.tsx",
 		"**/.client/**/*.ts",
-		"**/.client/**/*.tsx"
+		"**/.client/**/*.tsx",
+		"prisma/seed.ts"
 	],
 	"compilerOptions": {
 		"lib": ["DOM", "DOM.Iterable", "ES2022"],
@@ -13,7 +14,7 @@
 		"isolatedModules": true,
 		"esModuleInterop": true,
 		"jsx": "react-jsx",
-		"moduleResolution": "Bundler",
+		"moduleResolution": "Node",
 		"resolveJsonModule": true,
 		"target": "ES2022",
 		"strict": true,
@@ -21,6 +22,8 @@
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 		"baseUrl": ".",
+		"module": "ESNext",
+		"allowImportingTsExtensions": true,
 		"paths": {
 			"~/*": ["./app/*"]
 		},

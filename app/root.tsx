@@ -6,6 +6,12 @@ import {
 	ScrollRestoration,
 } from "@remix-run/react";
 
+import type { LinksFunction } from "@remix-run/node";
+
+import styles from "./tailwind.css?url";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+
 export default function App() {
 	return (
 		<html lang="en">
@@ -17,7 +23,7 @@ export default function App() {
 			</head>
 			<body>
 				<div id="sidebar">
-					<h1>Remix Contacts</h1>
+					<h1 className="text-red-700">Remix Contacts</h1>
 					<div>
 						<Form id="search-form" role="search">
 							<input
