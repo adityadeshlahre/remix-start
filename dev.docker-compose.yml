@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+    image: remix-start-dev:latest
+    container_name: remix-start-dev
+    expose:
+      - 5173
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=5173
+      - DATABASE_URL=${DATABASE_URL}
