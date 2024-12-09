@@ -7,6 +7,7 @@ RUN npm install --global pnpm@latest
 
 FROM base AS deps
 WORKDIR /app
+COPY .npmrc ./
 COPY package.json ./
 COPY pnpm-lock.yaml ./
 COPY prisma ./prisma
@@ -16,6 +17,7 @@ RUN pnpm install
 FROM deps AS prod-deps
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
+COPY .npmrc ./
 COPY package.json ./
 COPY pnpm-lock.yaml ./
 RUN pnpm prune --prod
@@ -47,4 +49,5 @@ COPY --from=builder /app/public ./public
 
 # ENTRYPOINT [ "node", "node_modules/.bin/remix-serve", "build/server/index.js"]
 # ENTRYPOINT [ "sh", "-c", "npx prisma migrate deploy && node node_modules/.bin/remix-serve build/server/index.js" ]
-ENTRYPOINT [ "sh", "-c", "npx prisma migrate deploy && pnpm start" ]
+# ENTRYPOINT [ "sh", "-c", "npx prisma migrate deploy && pnpm start" ]
+ENTRYPOINT [ "sh", "-c", "npm run setup && npm run start" ]
