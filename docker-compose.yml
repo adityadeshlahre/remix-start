@@ -3,14 +3,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        DATABASE_URL : ${DATABASE_URL}
     image: remix-start:latest
-    container_name: remix-start-full
+    container_name: remix-start
     expose:
-      - 5173
+      - 3000
     ports:
-      - "5173:5173"
+      - "3000:3000"
     volumes:
       - .:/app
     environment:
-      - NODE_ENV=development
-      - PORT=5173
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=${DATABASE_URL}
