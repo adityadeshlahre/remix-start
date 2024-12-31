@@ -3,7 +3,7 @@ FROM node:23-bullseye-slim AS base
 ENV PNPM_HOME="/root/.local/share/pnpm"
 ENV PATH="${PATH}:${PNPM_HOME}"
 RUN apt-get update && apt-get install -y openssl
-RUN npm install --global pnpm@latest 
+RUN npm install --global pnpm@latest ts-node 
 
 FROM base AS deps
 WORKDIR /app
@@ -30,6 +30,8 @@ RUN npx prisma generate --schema=./prisma/schema.prisma
 RUN pnpm run build
 
 FROM base AS runner
+
+RUN npm install --global pnpm@latest ts-node 
 
 ARG DATABASE_URL
 ENV DATABASE_URL=${DATABASE_URL}

@@ -50,6 +50,6 @@
 		"node": ">=20.0.0"
 	},
 	"prisma": {
-		"seed": "node --loader ts-node/esm ./prisma/seed.ts"
+		"seed": "npx prisma generate --schema=./prisma/schema.prisma && node --loader ts-node/esm ./prisma/seed.ts"
 	}
 }
