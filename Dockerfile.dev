@@ -39,4 +39,4 @@ COPY --from=dev-deps /app ./
 VOLUME ["/app/node_modules"]
 VOLUME ["/app"]
 
-ENTRYPOINT [ "sh", "-c", "npm run dev" ]
+ENTRYPOINT [ "sh", "-c", "npm run dev -- --host 0.0.0.0" ]

@@ -32,7 +32,7 @@ jobs:
 
       # - name: Build Docker images using Docker Compose for web & server
       #   run: |
-      #     docker-compose -f build.docker-compose.yml build 
+      #     docker-compose -f build.docker-compose.yml build
 
       # - name: Build Dev Docker images using Docker Compose for full setup
       #   run: |
