@@ -49,8 +49,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@rollup/rollup-linux-x64-musl':
-        specifier: ^4.28.1
-        version: 4.28.1
+        specifier: ^4.34.0
+        version: 4.34.0
       '@types/node':
         specifier: ^22.10.2
         version: 22.10.2
@@ -958,6 +958,11 @@ packages:
 
   '@rollup/rollup-linux-x64-musl@4.28.1':
     resolution: {integrity: sha512-xQTDVzSGiMlSshpJCtudbWyRfLaNiVPXt1WgdWTwWz9n0U12cI2ZVtWe/Jgwyv/6wjL7b66uu61Vg0POWVfz4g==}
+    cpu: [x64]
+    os: [linux]
+
+  '@rollup/rollup-linux-x64-musl@4.34.0':
+    resolution: {integrity: sha512-jo0UolK70O28BifvEsFD/8r25shFezl0aUk2t0VJzREWHkq19e+pcLu4kX5HiVXNz5qqkD+aAq04Ct8rkxgbyQ==}
     cpu: [x64]
     os: [linux]
 
@@ -3887,7 +3892,10 @@ snapshots:
   '@rollup/rollup-linux-x64-gnu@4.28.1':
     optional: true
 
-  '@rollup/rollup-linux-x64-musl@4.28.1': {}
+  '@rollup/rollup-linux-x64-musl@4.28.1':
+    optional: true
+
+  '@rollup/rollup-linux-x64-musl@4.34.0': {}
 
   '@rollup/rollup-win32-arm64-msvc@4.28.1':
     optional: true
