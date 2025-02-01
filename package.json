@@ -16,7 +16,7 @@
 	},
 	"dependencies": {
 		"@prisma/client": "^6.0.1",
-		"@remix-run/dev": "^2.15.1",
+		"@remix-run/dev": "^2.15.3",
 		"@remix-run/node": "^2.15.1",
 		"@remix-run/react": "^2.15.1",
 		"@remix-run/serve": "^2.15.1",
@@ -30,7 +30,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@remix-run/dev": "^2.15.0",
+		"@remix-run/dev": "^2.15.3",
 		"@rollup/rollup-linux-x64-musl": "^4.28.1",
 		"@types/node": "^22.10.2",
 		"@types/react": "^19.0.1",
